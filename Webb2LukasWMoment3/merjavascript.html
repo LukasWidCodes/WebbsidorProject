@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- Rensa fält från blanka och onödiga tecken-->
+    <h3>
+        trim() removes whitespace from both sides of a string:
+    </h3>
+
+    <h3>Skriv något med blanka värden i början och på slutet</h3>
+    <p>Name: <input id="input" type="text" name="input"></p>
+    <p>Resultat: <input id="output" type="text" name="output"></p>
+
+    <button onclick="trimInput()">Trim</button>
+
+    <script>
+        function trimInput() {
+            let input = document.getElementById("input").value;
+            let output = input.trim();
+            document.getElementById("output").value = output;
+        }
+    </script>
+    <!-- Sträng metoder och egenskaper
+        There are 4 methods for extracting string characters:
+            The at(position) Method
+            The charAt(position) Method
+            The charCodeAt(position) Method
+            Using property access [] like in arrays 
+            
+            There are 3 methods for extracting a part of a string:
+            slice(start, end)
+            substring(start, end)
+            substr(start, length)-->
+
+    <h3>
+        Sträng metoder och egenskaper:
+    </h3>
+
+    <h3>Skriv något med flera tecken i fältet</h3>
+    <p>Sträng: <input id="sinput" type="text" name="sinput"></p>
+
+    <p>Längd: <span id="length"></span></p>
+    <p>Unicode vid position charCodeAt(1): <span id="charCodeAt"></span></p>
+    <p>Tecken vid position input[1]: <span id="letterAt"></span></p>
+    <p>Del av text med slice(1, 4): <span id="slice"></span></p>
+    <p>Del av text med slice(-4, -1) negativa värden: <span id="slice2"></span></p>
+    <p>Del av text med substring(-1, 4): <span id="substring"></span></p>
+    <p>Del av text med en parameter substring(2): <span id="substring2"></span></p>
+    <p>Del av text med substr(1, 4): <span id="substr"></span></p>
+    <p>Del av text med en parameter substr(1): <span id="substr2"></span></p>
+    <p>Del av text med en negativ parameter substr(-1): <span id="substr3"></span></p>
+    <p>Omvandla till stora bokstäver toUpperCase(): <span id="uppercase"></span></p>
+    <p>Omvandla till små bokstäver toLowerCase(): <span id="lowercase"></span></p>
+    <p>Konkatinera concat("Hej, ", input): <span id="concat"></span></p>
+
+    <button onclick="stringMethods()">Kör metoder</button>
+
+    <script>
+        function stringMethods() {
+            let input = document.getElementById("sinput").value;
+
+            let length = input.length;
+            let charCodeAt = input.charCodeAt(1);
+            let letterAt = input[1];
+            let slice = input.slice(1, 4);
+            let slice2 = input.slice(-4, -1);
+            // The difference is that start and end values less than 0 are treated as 0 in substring().
+            let substring = input.substring(-1, 4);
+            // If you omit the second parameter, substring() will slice out the rest of the string.
+            let substring2 = input.substring(2);
+            // substr() is similar to slice().
+            // The difference is that the second parameter specifies the length of the extracted part.
+            let substr = input.substr(1, 4);
+            // If you omit the second parameter, substr() will slice out the rest of the string.
+            let substr2 = input.substr(1);
+            // If the first parameter is negative, the position counts from the end of the string.
+            let substr3 = input.substr(-1);
+            let upperCase = input.toUpperCase();
+            let lowerCase = input.toLowerCase();
+            let text1 = "Hej ";
+            let text2 = input;
+            let text3 = text1.concat(" ", text2);
+
+            document.getElementById("length").innerHTML = length;
+            document.getElementById("charCodeAt").innerHTML = charCodeAt;
+            document.getElementById("letterAt").innerHTML = letterAt;
+            document.getElementById("slice").innerHTML = slice;
+            document.getElementById("slice2").innerHTML = slice2;
+            document.getElementById("substring").innerHTML = substring;
+            document.getElementById("substring2").innerHTML = substring2;
+            document.getElementById("substr").innerHTML = substr;
+            document.getElementById("substr2").innerHTML = substr2;
+            document.getElementById("substr3").innerHTML = substr3;
+            document.getElementById("uppercase").innerHTML = upperCase;
+            document.getElementById("lowercase").innerHTML = lowerCase;
+            document.getElementById("concat").innerHTML = text3;
+        }
+    </script>
+
+    <!-- Regular Expression (Regex) -->
+    <h3>
+        Regular Expressions och Felmeddelanden:
+    </h3>
+
+    <h3>Skriv en email-adress:</h3>
+    <p>Email: <input id="email" type="text" name="email"><span style="color: red"> *</span><span id="mess"
+            style="color: red"></span></p>
+    <p><button onclick="regEx()">Kontrollera email</button></p>
+
+    <script>
+        function regEx() {
+            let input = document.getElementById("email").value;
+            const pattern1 = (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
+            const pattern2 = (/.\.[a-zA-Z]{2,}$/);
+            const pattern3 = (/.@./);
+            if (!(pattern1.test(input))) {
+                document.getElementById("mess").innerHTML = " Adressen är ogiltig.";
+                if (!(pattern2.test(input))) {
+                    document.getElementById("mess").innerHTML = " Landskoden är ogiltigt.";
+                }
+                if (!(pattern3.test(input))) {
+                    document.getElementById("mess").innerHTML = " Formatet är ogiltigt. Måste innehålla @.";
+                }
+            }
+            else {
+                document.getElementById("mess").innerHTML = " ";
+            }
+        }
+    </script>
+
+    <!-- Animera och gömma bild -->
+    <style>
+        /* All animations should be relative to a container element. 
+           The container element should be created with style = "position: relative".*/
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+
+        /* The animation element should be created with style = "position: absolute". */
+        #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+
+    <body>
+
+        <div id="container">
+            <div id="animate"></div>
+        </div>
+
+        <p><button onclick="myMove()">Click Me</button></p>
+        <p><button onclick="hideShow()">Toggle Hide Show</button></p>
+
+        <script>
+            function myMove() {
+                let id = null;
+                const elem = document.getElementById("animate");
+                let pos = 0;
+                clearInterval(id);
+                // JavaScript animations are done by programming gradual changes in an element's style.
+                // The changes are called by a timer. When the timer interval is small, the animation looks continuous.
+                id = setInterval(frame, 5);
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        elem.style.top = pos + "px";
+                        elem.style.left = pos + "px";
+                    }
+                }
+            }
+
+            function hideShow() {
+                const elem = document.getElementById("animate");
+
+                if (elem.style.display === "none") {
+                    elem.style.display = "block";
+                } else {
+                    elem.style.display = "none";
+                }
+            }
+        </script>
+
+    <!-- Lägga till nya element -->
+        <h4>Creating New HTML Elements (Nodes)</h4>
+        <p>Add a new HTML Element.</p>
+
+        <button onclick="newNodeAppend()" id="myBtn1">newNodeAppend</button>
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+        <span id="demo1"></span>
+
+        <script>
+            function newNodeAppend() {
+                // This code creates a new <p> element:
+                const para = document.createElement("p");
+                // To add text to the <p> element, you must create a text node first. This code creates a text node:
+                const node = document.createTextNode("This is new.");
+                // Then you must append the text node to the <p> element:
+                para.appendChild(node);
+                // Finally you must append the new element to an existing element.
+                // This code finds an existing element:
+                const element = document.getElementById("div1");
+                // This code appends the new element to the existing element:
+                element.appendChild(para);
+                document.getElementById("demo1").innerHTML = "<hr>";
+            }
+        </script>
+    </body>
+
+</html>

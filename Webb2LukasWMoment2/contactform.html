@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Mall.CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="CSS/myCustom.css">
+	<script src="javascript/myCustomJs.js"></script>
+</head>
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="london.html">London</a>
+        <a href="paris.html">Paris</a>
+        <a href="#tokyo">Tokyo</a>
+        <a href="moment2.html">Cities Bucketlist</a>
+        <a href="contactform.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="w3-container w3-yellow">
+        <h1>Forms Demo</h1>
+        <p>Try different Forms!</p>
+    </div>
+
+    <div class="w3-row-padding">
+
+        <div class="w3-third">
+            <h2>Contact 1</h2>
+            <form id="form1" name="form1" action=" ">
+                First name:<br>
+                <input type="text" name="fnamn" id="fnamn" /> <br>
+                Surname:<br>
+                <input type="text" name="enamn" id="enamn" /> <br>
+                E-mail:<br>
+                <input type="email" name="epost" id="epost" /> <br>
+                Message:<br>
+                <textarea name="meddelande" id="meddelande" cols="45" rows="5"></textarea> <br>
+                <input type="submit" name="skicka1" id="skicka1" value="Send message" />
+            </form>
+        </div>
+
+        <div class="w3-third">
+            <h2>Contact 2</h2>
+
+            <fieldset style="width: 85%;">
+                <legend>Sender</legend>
+                <form id="form2" name="form2" action="">
+                    <label for="fnamn">First name: <span>*</span></label> <br>
+                    <input type="text" name="fnamn" id="fnamn" value="Micke" required /> <br>
+                    <label for="enamn">Surname: <span>*</span></label> <br>
+                    <input type="text" name="enamn" id="enamn" required /> <br>
+                    <label for="epost">E-mail: <span>*</span></label> <br>
+                    <input type="email" name="epost" id="epost" required />
+            </fieldset>
+
+            <fieldset style="width: 300px;">
+                <legend>Credentials</legend>
+                <br>
+                <label for="pass">Password:</label><br>
+                <input type="password" name="pass" id="pass" />
+                <label for="datum"><br>Choose date:</label><br>
+                <input type="date" name="bokningsdatum">
+                <br>
+                <label for="dagsform">Your age:</label><br>
+                <input type="number" name="age" min="1" max="120">
+                <br>
+                <label for="e-postadress">e-mail:</label><br>
+                <input type="email" name="email">
+            </fieldset>
+
+            <fieldset style="width: 300px;">
+                <legend>Favoritårstid</legend>
+                <input type="checkbox" name="favoritarstid" id="var" value="var" />
+                <label for="var">Vår</label><br>
+                <input type="checkbox" name="favoritarstid" id="sommar" value="sommar" />
+                <label for="sommar">Sommar</label> <br>
+                <input type="checkbox" name="favoritarstid" id="host" value="host" />
+                <label for="host">Höst</label> <br>
+                <input type="checkbox" name="favoritarstid" id="vinter" value="vinter" />
+                <label for="vinter">Vinter</label>
+            </fieldset>
+            <br>
+            <input type="submit" name="skicka2" id="skicka2" value="Send">
+            </form>
+        </div>
+
+        <div class="w3-third">
+            <h2>Contact 3</h2>
+            <form id="form3" name="form3" action="index.html">
+                <fieldset style="width: 85%;">
+                    <legend>Form for sending message</legend>
+                    <label for="fnamn">First name:</label> <br>
+                    <input type="text" name="fnamn" id="fnamn" /> <br>
+                    <label for="enamn">Surname:</label> <br>
+                    <input type="text" name="enamn" id="enamn" /> <br>
+                    <label for="epost">E-mail:</label> <br>
+                    <input type="email" name="epost" id="epost" /> <br>
+                    <label for="meddelande">Message:</label> <br>
+                    <textarea name="meddelande" id="meddelande" cols="40" rows="5"></textarea> <br>
+                    <label for="skicka"></label>
+                    <input type="submit" name="skicka3" id="skicka3" value="Send message" />
+                </fieldset>
+            </form>
+
+            <form id="form4" name="form4" action="">
+                <fieldset style="width: 300px;">
+                    <legend>Best Season</legend>
+                    <input type="radio" name="favoritarstid" id="var" value="var" />
+                    <label for="var">Spring</label> <br>
+                    <input type="radio" name="favoritarstid" id="sommar" value="sommar" />
+                    <label for="sommar">Summer</label> <br>
+                    <input type="radio" name="favoritarstid" id="host" value="host" />
+                    <label for="host">Fall</label> <br>
+                    <input type="radio" name="favoritarstid" id="vinter" value="vinter" />
+                    <label for="vinter">Winter</label>
+                    <br>
+                    <input type="button" name="skicka4" id="skicka4" value="Send message" />
+                </fieldset>
+
+                <fieldset style="width: 300px;">
+                    <legend>Best Season</legend>
+                    <label for="select"><br>Choose you favourite season:</label>
+                    <br>
+                    <select name="favoritarstid" id="favoritarstid">
+                        <option> Choose season here! </option>
+                        <option value="var"> Spring </option>
+                        <option value="sommar"> Summer </option>
+                        <option value="host"> Fall </option>
+                        <option value="vinter"> Winter </option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="button" name="button" id="button">Send</button>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="w3-container w3-yellow">
+        <a href="contactform.html">
+            <p>Contact</p>
+        </a>
+    </div>
+
+</body>
+
+</html>

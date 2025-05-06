@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<title>Moment1</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="moment1.css">
+</head>
+<body>
+<div class="w3-container w3-yellow">
+    <h1>Survey</h1>
+    <p>What is your favorite City?</p>
+</div>
+    <div class="w3-third" id="extra">
+        <br>
+        <form id="form" name="form">
+            <fieldset>
+                <legend>Contact details</legend>
+                <label for="fnamn">First name: </label> <br>
+                <input type="text" name="fnamn" id="fnamn" required> <br>
+                <label for="enamn">Surname: </label> <br>
+                <input type="text" name="enamn" id="enamn" required> <br>
+                <label for="epost">E-mail: </label> <br>
+                <input type="email" name="epost" id="epost" required>
+            </fieldset>
+            <br>
+            <fieldset>
+                What is your next travel destination?:<br>
+                <textarea name="meddelande" id="meddelande" cols="45" rows="5"></textarea> <br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Favourite City</legend>
+                <input type="radio" name="FavCity" id="london">
+                <label for="london">London</label><br>
+                <input type="radio" name="FavCity" id="paris">
+                <label for="paris">Paris</label> <br>
+                <input type="radio" name="FavCity" id="tokyo">
+                <label for="tokyo">Tokyo</label> <br>
+                <input type="radio" name="FavCity" id="other">
+                <label for="other">Other</label>
+            </fieldset>
+            <br>
+            <input type="submit" name="skicka" id="skicka" value="Send">
+        </form>
+    </div>
+</body>
+</html>

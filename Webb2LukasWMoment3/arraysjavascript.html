@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+/*Det finns flera sätt att deklarera arrayer i Javascript/jQuery
+O.B.S när du deklarerar en konstant array kan du inte ändra på
+namnet eller typen men du kan ändra på antalet element och dess innehåll.*/
+
+/*Deklarera dynamisk array utan värden*/
+var dynamicArray = new Array();
+
+/*Deklarera statisk array utan värden*/
+const staticArray = Array(5);
+
+/*Deklarera konstant array med värden*/
+const constArray = Array("Malmö", "Anneboda", "Lule", "Sveg", "Avesta");
+
+
+/*Du kan använda push för att lägga till värden i slutet av en array.*/
+var index = 0;
+function pushArray() {
+    var textValue = document.getElementById("textValue").value;
+    dynamicArray.push(textValue.trim()); /*The trim() method removes whitespace from both ends of a 
+                                        string and returns a new string, without modifying the original 
+                                        string.*/
+    alert(dynamicArray);
+    document.getElementById("dynamicArray").innerHTML = dynamicArray[dynamicArray.length-1];
+};
+
+/*Om du använder push på en array med deklarerad längd hamnar den efter sista elementet (som är tomt).
+Istället kan du använda ett index om du vill komma åt ett specifikt index.*/
+var index2 = 0;
+function indexArray() {
+    let textValue = document.getElementById("textValue2").value;
+    staticArray[index2] = textValue.trim();
+    alert(staticArray);
+    document.getElementById("staticArray").innerHTML = staticArray[index2];
+    index2++;
+};
+
+/*Om arrayen har fördefinierade värden kommer du skriva över dessa om du använder elementens index.*/
+var index3 = 0;
+function constantArray() {
+    let textValue = document.getElementById("textValue3").value;
+    constArray[index3] = textValue.trim();
+    constArray
+    alert(constArray);
+    document.getElementById("constantArray").innerHTML = constArray[index3];
+    index3++;
+};
+
+/*För att inte skriva över elementen måste du börja skriva efter sista elementet. Du kan
+även göra det med push.*/
+var index4 = 0;
+function pushConstantArray() {
+    let textValue = document.getElementById("textValue4").value;
+    //constArray[index4] = textValue;
+    alert(constArray);
+    constArray.push(textValue.trim());
+    alert(constArray[constArray.length - 1]);
+    document.getElementById("constantArray2").innerHTML = constArray;
+    index4++;
+};
+
+/*Du kan använda pop för att ta bort sista värdet i en array.*/
+function popDynamicArray() {
+    constArray.pop(); 
+    alert(constArray);
+    document.getElementById("popArray").innerHTML = constArray;
+};
+
+/*Du kan använda shift för att ta bort första värdet i en array.*/
+function shiftConstArray() {
+    constArray.shift(); 
+    alert(constArray);
+    document.getElementById("shiftArray").innerHTML = constArray;
+};
+
+/*Du kan använda unshift för att lägga till värden i början av en array.*/
+function unShiftArray() {
+    let textValue = document.getElementById("textValue5").value;
+    constArray.unshift(textValue.trim()); /*The trim() method removes whitespace from both ends of a 
+                                        string and returns a new string, without modifying the original 
+                                        string.*/
+    alert(constArray);
+    document.getElementById("unShiftArray").innerHTML = constArray;
+};
+constArray
+</script>
+</head>
+<body>
+
+<h3>Det finns flera sätt att deklarera arrayer i Javascript
+    O.B.S när du deklarerar en konstant array kan du inte ändra på
+    namnet <br>eller typen men du kan ändra på antalet element och dess innehåll.</h3>
+
+<h3>Du kan använda push för att lägga till värden i slutet av en array.</h3>
+<p>Name: <input id="textValue" type="text" name="user"></p>
+
+<p>Content from DynamicArray:</p>
+<button type="button" onclick="pushArray()">Get the value of the input field</button>
+<p id="dynamicArray"></p>
+
+<h3>Om du använder push på en array med deklarerad längd hamnar den efter sista elementet (som är tomt).
+    Istället måste du använda ett index:</h3>
+<p>Name: <input id="textValue2" type="text" name="user"></p>
+
+<p>Content from StaticArray</p>
+<button type="button" onclick="indexArray()">Get the value of the input field</button>
+<p id="staticArray"></p>
+
+<h3>Om arrayen har fördefinierade värden kommer du skriva över dessa om du använder elementens index:</h3>
+<p>Name: <input id="textValue3" type="text" name="user"></p>
+
+<p>Content from ConstArray</p>
+<button type="button" onclick="constantArray()">Get the value of the input field</button>
+<p id="constantArray"></p>
+
+<h3>För att inte skriva över elementen måste du börja skriva efter sista elementet. Du kan
+    även göra det med push:</h3>
+<p>Name: <input id="textValue4" type="text" name="user"></p>
+
+<p>Content from ConstArray</p>
+<button type="button" onclick="pushConstantArray()">Get the value of the input field</button>
+<p id="constantArray2"></p>
+
+<h3>Du kan även ta bort sista elementet med pop:</h3>
+
+<p>Content from DynamicArray</p>
+<button type="button" onclick="popDynamicArray()">Get the value of the array</button>
+<p id="popArray"></p>
+
+<h3>Du kan även ta bort första elementet med shift:</h3>
+
+<p>Content from constArray</p>
+<button type="button" onclick="shiftConstArray()">Get the value of array</button>
+<p id="shiftArray"></p>
+
+<h3>Du kan använda unshift för att lägga till värden i början av en array.</h3>
+<p>Name: <input id="textValue5" type="text" name="user"></p>
+
+<p>Content from DynamicArray:</p>
+<button type="button" onclick="unShiftArray()">Get the value of the input field</button>
+<p id="unShiftArray"></p>
+
+<style>
+    /*För att kunna placera och hämta värden från dokumentet är det bra att förstå DOM och hur
+    du använder selektorer. https://www.w3schools.com/cssref/css_selectors.php
+
+    Det här är ett exempel en tillämpning av parent och child:*/
+    div:first-child {
+        color: red;
+    }
+
+    div:nth-child(2) {
+        color: blue;
+    }
+    div:nth-child(3) {
+        color: green;
+    }
+
+</style>
+
+<h3>För att kunna placera och hämta värden från dokumentet är det bra att förstå DOM och hur
+    du använder selektorer. 
+    <a href="https://www.w3schools.com/cssref/css_selectors.php">
+        https://www.w3schools.com/cssref/css_selectors.php
+    </a>
+    <br>
+    Det här är ett exempel en tillämpning av parent och child:
+</h3>
+<div> <!-- Parent -->
+    <div> <!-- Parent and 1:st child-->
+        Hej (Parent and 1:st child)
+        <div> <!-- First child -->
+            Hej igen (First child)
+        </div>
+    </div>
+    <div> <!-- Second child -->
+        Hej igen (Second child)
+    </div>
+    <div> <!-- Third child -->
+        Hej igen (Third child)
+    </div>
+</div>
+
+</body>
+</html>

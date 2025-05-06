@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript can Change HTML</h2>
+
+    <p><b>Change with innerHTML</b></p>
+    <p id="p1">Hello World!</p>
+    <!-- The easiest way to modify the content of an HTML element is by using the innerHTML property. -->
+    <button onclick="inner()">innerHTML</button>
+
+    <script>
+        function inner() {
+            document.getElementById("p1").innerHTML = "New text!";
+            document.getElementById("p2").innerHTML = "The paragraph above was changed by a script.<hr>";
+        }
+    </script>
+
+    <p id="p2">The paragraph above was changed by a script.</p>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Change the value of an Attribute</b></p>
+    <img id="image" src="https://www.w3schools.com/JS/smiley.gif" width="160" height="120">
+    <!-- This example changes the value of the src attribute of an <img> element: -->
+    <br><button onclick="changeAttribute()">changeAttribute</button>
+    <script>
+        function changeAttribute() {
+            document.getElementById("image").src = "https://www.w3schools.com/JS/landscape.jpg";
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+    </script>
+
+    <p>The original image was smiley.gif, but the script changed it to landscape.jpg</p>
+    <span id="demo1"></span>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Dynamic HTML content</b></p>
+    <p id="demo2"></p>
+    <!-- JavaScript can create dynamic HTML content: -->
+    <button onclick="newDate()">newDate</button>
+    <span id="demo3"></span>
+    <script>
+        function newDate() {
+            document.getElementById("demo2").innerHTML = "Date : " + Date();
+            document.getElementById("demo3").innerHTML = "<hr>";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+/*CSS som jag skrev finns längre ner: rad 78*/
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Fixed footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+}
+
+span {
+  color: red;
+}
+
+/* Grid */
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* 
+Över så är det som kom med exempelkoden.
+Min CSS finns under.
+*/
+
+.stickcontainer{
+  position:relative;
+  display:block;
+}
+.stickcontainer img{
+  position: absolute;
+}
+#sticks{
+  display:none;
+  z-index:10;
+}
+
+@keyframes boomImpact { /*En animation som passar till mina js animationer*/
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 0 10px rgba(255, 0, 0, 0),
+      0 0 15px rgba(0, 0, 255, 0),
+      0 0 15px rgba(220, 0, 220, 0);
+  }
+  25% {
+    transform: scale(1);
+    box-shadow:
+      20px -8px 20px rgba(255, 0, 0, 0.5),
+      20px 8px 20px rgba(0, 0, 255, 0.8),
+      60px 0px 35px rgba(220, 0, 220, 1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow:
+      60px -15px 40px rgba(255, 0, 0, 0.5),
+      60px 15px 40px rgba(0, 0, 255, 0.8),
+      100px 0px 60px rgba(240, 0, 240, 1);
+  }
+  75% {
+    transform: scale(1);
+    box-shadow:
+      30px -8px 25px rgba(255, 0, 0, 0.5),
+      30px 8px 25px rgba(0, 0, 255, 0.8),
+      70px 0px 40px rgba(220, 0, 220, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 10px rgba(255, 0, 0, 0),
+      0 0 10px rgba(0, 0, 255, 0),
+      0 0 15px rgba(220, 0, 220, 0);
+  }
+}
+/*Dem här klasserna ges i javascript rad 467*/
+.messageHighligh {
+  animation: boomImpact 0.5s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.cityHighligh {
+  animation: boomImpact 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.emailHighligh {
+  animation: boomImpact 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.nameHighligh {
+  animation: boomImpact 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+/*-----------------------------------------------------*/
+/*Allt i min css är basic inget speciellt*/
+#hide{
+  z-index:1;
+}
+#show{
+  z-index:3;
+  position:absolute;
+}
+#imageStickChanger{
+  position:absolute;
+  left: 389px;
+  top:13px;
+  z-index:4;
+  display:none;
+}
+
+#white{
+  position:absolute;
+  right:50px;
+  bottom:5px;
+  z-index:2;
+}
+#anotherWhiteImage{
+  z-index:5;
+  position:absolute;
+  left: 440px;
+}
+#errorBox{
+  position: relative;
+}
+#errorText1{
+  position: absolute;
+  left: 212px;
+  bottom: 278px;
+  width: 225px;
+  height: 25px;
+  font-size:13px;
+  display:none;
+  font-weight: bold;
+  text-shadow:
+  0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 3px #fff,
+
+  0 0 5px #ff003c,
+  0 0 7px #ff003c,
+
+  0 0 10px #0044ff,
+  0 0 14px #0044ff,
+
+  0 0 18px #a200ff,
+  0 0 24px #a200ff,
+  0 0 30px #a200ff;
+}
+#errorText2{
+  position: absolute;
+  left: 212px;
+  bottom: 227px;
+  display:none;
+  width: 225px;
+  height: 25px;
+  font-size:13px;
+  font-weight: bold;
+  text-shadow:
+  0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 3px #fff,
+
+  0 0 5px #ff003c,
+  0 0 7px #ff003c,
+
+  0 0 10px #0044ff,
+  0 0 14px #0044ff,
+
+  0 0 18px #a200ff,
+  0 0 24px #a200ff,
+  0 0 30px #a200ff;
+}
+#errorText3{
+  position: absolute;
+  left: 140px;
+  bottom: 177px;
+  display:none;
+  width: 225px;
+  height: 25px;
+  font-size:13px;
+  font-weight: bold;
+  text-shadow:
+  0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 3px #fff,
+
+  0 0 5px #ff003c,
+  0 0 7px #ff003c,
+
+  0 0 10px #0044ff,
+  0 0 14px #0044ff,
+
+  0 0 18px #a200ff,
+  0 0 24px #a200ff,
+  0 0 30px #a200ff;
+}
+#errorText4{
+  position: absolute;
+  left: 310px;
+  bottom: 69px;
+  display:none;
+  width: 100px;
+  height: 65px;
+  font-size:13px;
+  text-shadow:
+  0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 3px #fff,
+
+  0 0 5px #ff003c,
+  0 0 7px #ff003c,
+
+  0 0 10px #0044ff,
+  0 0 14px #0044ff,
+
+  0 0 18px #a200ff,
+  0 0 24px #a200ff,
+  0 0 30px #a200ff;
+  font-weight: bold;
+}

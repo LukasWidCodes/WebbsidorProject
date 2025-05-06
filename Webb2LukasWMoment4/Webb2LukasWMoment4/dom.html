@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>Responsive Mall.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="CSS/myCustom.css">
+<script src="javascript/myCustomJs.js"></script>
+<script src="javascript/collections.js"></script>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href=" london.html">London</a>
+        <a href="paris.html">Paris</a>
+        <a href="#tokyo">Tokyo</a>
+        <a href="cities.html">Cities Bucketlist</a>
+        <a href="contactform.html">Contactforms</a>
+        <a href="nodes.html" class="active">Nodes</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="w3-container w3-yellow">
+        <h1>Nodes Demo</h1>
+        <p>Olika sätt att använda noder!</p>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-quarter w3-border w3-margin">
+            <h2>Skicka fält från formulär</h2>
+            <p>
+            <form id="demo">
+                First name:<br>
+                <input type="text" name="fname" id="fname" /> <br>
+
+                Surname:<br>
+                <input type="text" name="ename" id="ename" /> <br>
+
+                E-mail:<br>
+                <input type="email" name="email" id="email" /> <br>
+
+                Message:<br>
+                <textarea name="msg" id="msg" rows="5"></textarea> <br>
+                Fältnummer:<br>
+                <input type="number" min="1" max="4"><br>
+                <p>
+                    <button type="button" onclick=submitForm()>Skicka text i fält</button>
+                    <button type="button" onclick="rensa()">Återställ</button>
+                </p>
+            </form>
+            </p>
+        </div>
+        <div class="w3-quarter w3-border w3-margin" id="text">
+            <h2>Skicka text i divar</h2>
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>
+                4
+                <div>
+                    child
+                </div>
+            </div>
+            <p>20</p>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+
+            <p>
+                <button type="button" onclick="submitDivar()">Skicka text i divar</button>
+                <button type="button" onclick="rensa()">Återställ</button>
+            </p>
+        </div>
+        <div class="w3-quarter w3-border w3-margin" id="nodes">
+            <h2>Skicka olika delar av noder</h2>
+
+            <!-- Det här är en kommentars node! -->
+            <h4>Det här är en rubrik 4 node</h4>
+            <h5>Det här är en rubrik 5 node</h5>
+            <p>Det här är den första paragraf noden</p>
+            <!-- Notera att även tomma rader är noder, likaså tomma element! -->
+            <p>Det här är den andra paragraf noden</p>
+            <p id="demo"></p>
+            <p>
+                <p></p><button type="button" onclick="submitAllEntries()">Skicka Entries</button>
+                <p></p><button type="button" onclick="submitAllKeys()">Skicka Keys</button>
+                <p></p><button type="button" onclick="submitAllValues()">Skicka Values</button>
+                <p></p><button type="button" onclick="submitParagraphValues()">Skicka Paragrafvärden</button>
+                <p></p><button type="button" onclick="submitHeader4Value()">Skicka värde i h4</button>
+                <p></p><button type="button" onclick="rensa()">Återställ</button>
+            </p>
+        </div>
+        <div class="w3-rest w3-border w3-margin w3-padding">
+            <p id="utskrift">
+
+            </p>
+        </div>
+    </div>
+
+    <div class="footer w3-yellow">
+        <a href="contactform.html">
+            <p>Contact</p>
+        </a>
+    </div>
+
+</body>
+
+</html>

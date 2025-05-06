@@ -1,0 +1,56 @@
+<!--Allt jag gjort är under html/css/js som heter moment2.____-->
+<!DOCTYPE html> <!-- denna från uppgiften känner jag är lite dålig då det finns städer med mellanslag (t.ex Los Angeles) men onödiga mellanslag tas bort: f) Kontrollera formatet på staden som användaren anger. Det ska inte gå att ange mellanslag.-->
+<html lang="en"> <!--html har både en och sv. den var EN från början men text jag laggt till är SV-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LukasWMoment2</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="CSS/myCustom.css">
+    <link rel="stylesheet" href="CSS/moment2.css">
+	<script src="javascript/myCustomJs.js"></script>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" >Home</a>
+        <a href="london.html">London</a>
+          <a href="paris.html">Paris</a>
+          <a href="#tokyo">Tokyo</a>
+          <a href="moment2.html" class="active">Cities Bucketlist</a>
+          <a href="contactform.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+          </a>
+      </div>
+      <div class="w3-container w3-orange">
+        <h1>Survey</h1> 
+        <p>What is your favorite City?</p> 
+      </div>
+      <br>
+      <form id="städer">
+        <fieldset style="width:400px">
+        <legend>My Cities</legend>
+        <label>City:</label>
+        <br>
+        <input type="text" id="input" placeholder="City name"> 
+        <input type="button" value="Add City" id="knapp">
+        <br><br><br>
+        <label>Cities:</label>
+        <br><br>
+        <textarea id="stad1" disabled rows="1"></textarea>
+        <textarea id="stad2" disabled rows="1"></textarea>
+        <textarea id="stad3" disabled rows="1"></textarea>
+        <textarea id="stad4" disabled rows="1"></textarea>
+        <textarea id="stad5" disabled rows="1"></textarea>
+        <br><br>
+        <input type="button" Value="Sort" id="sort">
+        <input type="button" Value="Reset" id="reset">
+        </fieldset>
+      </form>
+      <div class = "sammanTextKlass">
+      <p id="stadSammanhållandeText"></p>
+      </div>
+      <script src="javascript/moment2.js"></script>
+</body>
+</html>

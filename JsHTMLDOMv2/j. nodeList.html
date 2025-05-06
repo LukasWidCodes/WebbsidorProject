@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript HTML DOM Node Lists</h2>
+    <!-- A NodeList object is a list (collection) of nodes extracted from a document.
+         A NodeList object is almost the same as an HTMLCollection object.
+         Some (older) browsers return a NodeList object instead of an HTMLCollection for methods like 
+         getElementsByClassName().
+         All browsers return a NodeList object for the property childNodes. 
+         Most browsers return a NodeList object for the method querySelectorAll() -->
+
+    <h4>The HTML DOM NodeList Object Length and Index</h4>
+
+    <p>Hello World!</p>
+    <p>Hello Norway!</p>
+    <p id="demo"></p>
+
+    <button onclick="nodeListIndex()" id="myBtn1">nodeListIndex</button>
+    <button onclick="collectionLength()" id="myBtn2">collectionLength</button>
+    <span id="demo1"></span>
+
+    <script>
+        function nodeListIndex() {
+            //The elements in the NodeList can be accessed by an index number.
+            const myNodelist = document.querySelectorAll("p");
+            // To access the second <p> node you can write:
+            document.getElementById("demo").innerHTML = "The innerHTML of the second paragraph is: " + myNodelist[1].innerHTML; document.getElementById("demo1").innerHTML = "<hr>";
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+
+        function collectionLength() {
+            // The length property defines the number of nodes in a node list:
+            const myCollection = document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML = "This document contains " + myNodelist.length + " paragraphs."; document.getElementById("demo1").innerHTML = "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <!-- The length property is useful when you want to loop through the nodes in a node list: -->
+    <h4>HTML NodeList loop</h4>
+
+    <p>Hello World!</p>
+    <p>Hello Norway!</p>
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="nodeListLoop()">nodeListLoop</button>
+    <span id="demo2"></span>
+
+    <script>
+        function nodeListLoop() {
+            const myNodelist = document.querySelectorAll("p");
+            for (let i = 0; i < myNodelist.length; i++) {
+                myNodelist[i].style.color = "red";
+            }
+            document.getElementById("demo2").innerHTML = "<hr>";
+        }
+    </script>
+
+</body>
+
+</html>

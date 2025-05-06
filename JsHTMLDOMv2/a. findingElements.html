@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript HTML DOM</h2>
+    <!-- If the element is found, the method will return the element as an 
+     object (in element). If the element is not found, element will contain null. -->
+    <p id="intro"><b>Finding HTML Elements by Id</b></p>
+    <p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+    <button onclick="byId()">byId</button>
+
+    <p id="byId"></p>
+
+    <script>
+        function byId() {
+            const element = document.getElementById("intro");
+
+            document.getElementById("byId").innerHTML =
+                "The text from the intro paragraph is: " + element.innerHTML + "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Finding HTML Elements by Tag Name.</b></p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+
+    <button onclick="byTagName()">byTagName</button>
+    <!-- This example finds the element with id="main", and then finds all <p> 
+         elements inside "main": -->
+    <p id="byTagName"></p>
+    <script>
+        function byTagName() {
+            const element = document.getElementsByTagName("p");
+            document.getElementById("byTagName").innerHTML = 'The text in fourth paragraph (index 3) is: ' + element[3].innerHTML + "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Finding HTML Elements by Class Name.</b></p>
+    <p class="byClassName">Hello World!</p>
+    <p class="byClassName">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+
+    <button onclick="byClassName()">byClassName</button>
+    <!-- This example returns a list of all elements with class="intro". -->
+    <p id="demo1"></p>
+
+    <script>
+        function byClassName() {
+            const x = document.getElementsByClassName("byClassName");
+            document.getElementById("demo1").innerHTML =
+            'The first paragraph (index 0) with class="byClassName" is: ' + x[0].innerHTML + "<hr>";
+            // 'The second paragraph (index 1) with class="byClassName" is: ' + x[1].innerHTML + "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Finding HTML Elements by Query Selector</b></p>
+    <p class="intro">Hello World!.</p>
+    <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+    <button onclick="selectorAll()">sekectorAll</button>
+    <!-- If you want to find all HTML elements that match a specified CSS selector (id, class names, 
+         types, attributes, values of attributes, etc), use the querySelectorAll() method.
+         This example returns a list of all <p> elements with class="intro". -->
+    <p id="demo2"></p>
+
+    <script>
+        function selectorAll() {
+            const x = document.querySelectorAll("p.intro");
+            document.getElementById("demo2").innerHTML =
+                'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML + "<hr>";
+            // 'The first paragraph (index 1) with class="intro" is: ' + x[1].innerHTML + "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <p><b>Finding HTML Elements Using document.forms</b>.</p>
+
+    <form id="frm1" action="">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input onclick=getForm() type="button" value="Submit"> <!-- För att inte sidan ska laddas om har 
+                                                                    jag satt type till button. -->
+    </form>
+    <!-- Finding HTML Elements by HTML Object Collections
+         This example finds the form element with id="frm1", in the forms collection, and displays all 
+         element values: -->
+    <p>These are the values of each element in the form:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        function getForm() {
+            const x = document.forms["frm1"];
+            let text = "";
+            for (let i = 0; i < x.length; i++) {
+                text += x.elements[i].value + "<br>";
+            }
+            document.getElementById("demo3").innerHTML = text + "<hr>";
+        }
+    </script>
+
+    <p>The following HTML objects (and object collections) are also accessible:</p>
+
+    <ul>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_anchors">document.anchors</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_body">document.body</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_embeds">document.embeds</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_forms">document.forms</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_head">document.head</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_images">document.images</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_links">document.links</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_scripts">document.scripts</a></li>
+        <li><a href="https://www.w3schools.com/JS/tryit.asp?filename=tryjs_doc_title">document.title</a></li>
+    </ul>
+</body>
+
+</html>

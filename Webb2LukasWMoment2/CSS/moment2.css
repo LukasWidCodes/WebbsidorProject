@@ -1,0 +1,19 @@
+#städer{ /*Styling så att det ska se så likt ut uppgiften den kan*/
+    margin-left:25px;
+}
+textarea{/*Styling så att det ska se så likt ut uppgiften den kan*/
+    margin-left:10%;
+}
+.sammanTextKlass{ /*Simpel klass för min div, borde kanske haft id men vill inte riskera att den övertar något i min js. Javascript är fortfarande nytt för så ingen anning om det faktiskt skulle kunna ha någon effekt (Försöker lära mig så mycket jag på sidan)*/
+    background-color: lightgray;
+    width: 50%;
+    position:relative;
+    left: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: none;
+    font-size:20px;
+}

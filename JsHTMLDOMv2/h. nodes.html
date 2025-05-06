@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript HTML DOM Elements (Nodes)</h2>
+
+    <h4>Creating New HTML Elements (Nodes)</h4>
+    <p>Add a new HTML Element.</p>
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+    <button onclick="newNodeAppend()" id="myBtn1">newNodeAppend</button>
+    <button onclick="newNodeBefore()" id="myBtn2">newNodeBefore</button>
+    <span id="demo1"></span>
+
+    <script>
+
+        function newNodeAppend() {
+            // This code creates a new <p> element:
+            const para = document.createElement("p");
+            // To add text to the <p> element, you must create a text node first. This code creates a text node:
+            const node = document.createTextNode("This is new.");
+            // Then you must append the text node to the <p> element:
+            para.appendChild(node);
+            // Finally you must append the new element to an existing element.
+            // This code finds an existing element:
+            const element = document.getElementById("div1");
+            // This code appends the new element to the existing element:
+            element.appendChild(para);
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+
+        function newNodeBefore() {
+            // This code creates a new <p> element:
+            const para = document.createElement("p");
+            // To add text to the <p> element, you must create a text node first. This code creates a text node:
+            const node = document.createTextNode("This is new.");
+            // Then you must append the text node to the <p> element:
+            para.appendChild(node);
+            // You can also insert the new element before the existing element.
+            // This code finds an existing element:
+            const element = document.getElementById("div1");
+            // This code finds the first existing element in the parent element:
+            const child = document.getElementById("p1");
+            // This code inserts the new element before the existing element:
+            element.insertBefore(para, child);
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <!-- To remove an HTML element, use the remove() method: -->
+
+    <h4>Remove an HTML Element.</h4>
+
+    <div>
+        <p id="p3">This is a paragraph.</p>
+        <p id="p4">This is another paragraph.</p>
+    </div>
+
+    <button onclick="removeElement()">removeElement</button>
+
+    <span id="demo2"></span>
+
+    <script>
+        function removeElement() {
+            document.getElementById("p3").remove();
+            document.getElementById("demo2").innerHTML = "<hr>";
+        }
+    </script>
+</body>
+
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+<!-- To replace an element to the HTML DOM, use the replaceChild() method: -->
+
+<h3>Replace an HTML Element.</h3>
+
+<div id="div2">
+    <p id="p5">This is a paragraph.</p>
+    <p id="p6">This is a paragraph.</p>
+</div>
+
+<button onclick="replaceElement()">replaceElement</button>
+
+<span id="demo3"></span>
+
+<script>
+    function replaceElement() {
+        // This code finds an existing element:
+        const parent = document.getElementById("div2");
+        // This code finds the first existing element in the parent element:
+        const child = document.getElementById("p5");
+        // This code creates a new <p> element:
+        const para = document.createElement("p7");
+        // To add text to the <p> element, you must create a text node first. This code creates a text node:
+        const node = document.createTextNode("This is new.");
+        // Then you must append the text node to the <p> element:   
+        para.appendChild(node);
+        // Then you must replace the text node and specify parameters for what and where:
+        parent.replaceChild(para, child);
+    }
+
+</script>
+
+</html>

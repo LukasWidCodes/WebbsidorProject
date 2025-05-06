@@ -1,0 +1,109 @@
+<html>
+
+</html>
+
+<head>
+    <title id="demo">DOM Nodes</title>
+    <!-- The element node <title> (in the example above) does not contain text.
+         It contains a text node with the value "DOM Tutorial". -->
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM Navigation</h2>
+
+    <!-- The value of the text node can be accessed by the node's innerHTML property: -->
+    <h4>Child Nodes and Node Values</h4>
+    <h5 id="id01">My First Page</h5>
+    <p id="id02"></p>
+    <button onclick="iHTML()" id="myBtn1">innerHTML</button>
+    <button onclick="fChild()" id="myBtn2">firstChild</button>
+    <button onclick="cNode()" id="myBtn3">childNodes</button>
+    <span id="demo1"></span>
+
+    <script>
+        function iHTML() {
+            // The value of the text node can be accessed by the node's innerHTML property:
+            document.getElementById("id02").innerHTML = "innerHTML:" + document.getElementById("id01").innerHTML;
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+        function fChild() {
+            // Accessing the innerHTML property is the same as accessing the nodeValue of the first child:
+            document.getElementById("id02").innerHTML = "firstChild.nodeValue:" + document.getElementById("id01").firstChild.nodeValue;;
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+        function cNode() {
+            // Accessing the first child can also be done like this:
+            document.getElementById("id02").innerHTML = "childNodes[0].nodeValue;:" + document.getElementById("id01").childNodes[0].nodeValue;
+            document.getElementById("demo1").innerHTML = "<hr>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <h4>DOM Root Nodes</h4>
+    <!-- There are two special properties that allow access to the full document:
+         * document.body - The body of the document
+         * document.documentElement - The full document -->
+    <p>Displaying document.body:</p>
+
+    <p id="demo2"></p>
+    <button onclick="dBody()" id="myBtn3">documentBody</button>
+
+    <p>Displaying documentElement:</p>
+
+    <p id="demo3"></p>
+    <button onclick="dElement()" id="myBtn4">documentElement</button>
+
+    <script>
+        function dBody() {
+            // The body of the document
+            document.getElementById("demo2").innerHTML = "<fieldset style='width: 400px'>" + document.body.innerHTML + "</fieldset>";
+        }
+        function dElement() {
+            // The full document
+            document.getElementById("demo3").innerHTML = "<fieldset style='width: 400px'>" + document.documentElement.innerHTML + "</fieldset>";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <!-- The nodeName property specifies the name of a node.
+         * nodeName is read-only
+         * nodeName of an element node is the same as the tag name
+         * nodeName of an attribute node is the attribute name
+         * nodeName of a text node is always #text
+         * nodeName of the document node is always #document -->
+
+    <h4>The nodeName Property</h4>
+    <h5 id="id03">My First Page</h5>
+    <p id="id04"></p>
+    <button onclick="nName()" id="myBtn5">nodeName</button>
+    <span id="demo4"></span>
+
+    <script>
+        function nName() {
+            document.getElementById("id04").innerHTML = document.getElementById("id03").nodeName;
+            document.getElementById("demo4").innerHTML = "<hr>";
+        }    
+    </script>
+
+    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+    <!-- The nodeType property is read only. It returns the type of a node. -->
+
+         <h4>The nodeName Property</h4>
+         <h5 id="id04">My First Page</h5>
+         <p id="id05"></p>
+         <button onclick="nType()" id="myBtn6">nodeType</button>
+         <span id="demo5"></span>
+
+         <script>
+             function nType() {
+                 document.getElementById("id05").innerHTML = document.getElementById("id04").nodeType;
+                 document.getElementById("demo5").innerHTML = "<hr>";
+             }    
+         </script>
+     
+</body>
+
+</html>

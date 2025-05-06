@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Mall.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/Moment3.css">
+    <link rel="stylesheet" href="CSS/myCustom.css">
+    <script src="javascript/myCustomJs.js"></script>
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="london.html">London</a>
+    <a href="paris.html">Paris</a>
+    <a href="#tokyo">Tokyo</a>
+    <a href="#cities">Cities Bucketlist</a>
+    <a href="Moment3.html" class="active">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="w3-container w3-yellow">
+  <h1>Contact</h1> 
+</div>
+<br>
+<div class="w3-row-padding" id="responsiveSize">
+    <div class="w3-content" id="formQuestion1">
+        
+            <fieldset style="width: 450px">
+                <legend>Your coordinates please</legend>
+                <form>
+                    <label for="txtName"  >Name: <span>*</span></label> <br>
+                    <input type="text" id="txtName"  placeholder="Your name" ><br>
+                    <label for="txtEmail"  >Email: <span>*</span></label> <br>
+                    <input type="text" id="txtEmail" placeholder="Your email address" ><br>
+                        <label for="selCity" >City: <span>*</span></label> <br>
+                        <select id="selCity">
+                                <option selected value="">Choose a city</option>
+                                <option value="Tokyo">Tokyo</option>
+                                <option value="London">London</option>
+                                <option value="Paris">Paris</option>
+                        </select><br><br>
+                        <label for="msg"  >Message: <span>*</span></label> <br>
+                    <textarea id="msg" name="msg" placeholder="Your message" style="width:300px;height:100px"></textarea><br>
+                    <input type="button" id="bt" value="Send" onclick="saveFile()">
+                    <div class= "stickcontainer">
+                            <img id="sticks" src="img/StickOne.png" alt="stickman">
+                            <img id="bulletImage" src="img/StickBullet1.png" alt="Bullet" style="display: none;">
+                            <img id="flyingImage" src="img/StickFlying1.png" alt="Flying" style="display: none;">
+                    </div>
+                    <div style="position: relative;"> 
+                        <img id="imageStickChanger" src="img/StickPeek1.png" alt="peeking stickman"> 
+                    </div>
+                    <div id="errorBox">
+                        <div id="errorText1">Name field cannot be left empty!</div>
+                        <div id="errorText2">Email field cannot be left empty and need to have the correct format example@gmail.com!</div>
+                        <div id="errorText3">City field cannot be left empty!</div>
+                        <div id="errorText4">Message field cannot be left empty!</div>
+                    </div>
+                </form><br>
+                <div style="position:absolute;">    
+                    <img id="show" src="img/please.png" alt="Please Fill The Form">
+                    <img id="hide" src="img/thankyou.png" alt="Thank You">
+                    <img id="white" src="img/LongWhiteImage.png" alt="just a white image">
+                    <img id="anotherWhiteImage" src="img/LongWhiteImage.png" alt="just a white image">
+                </div><br><br><br>
+            </fieldset>
+            
+        
+    </div>
+
+</div>
+<script src="javascript/Moment3.js"></script>
+</body>
+</html>
