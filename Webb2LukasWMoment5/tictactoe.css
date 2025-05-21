@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+
+#gamearea {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+}
+
+#board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.cell {
+  border: 3px solid #ff4e50;
+  background: #fffbe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff4e50;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.cell:hover {
+  background: #ffe082;
+  transform: scale(1.08);
+}
+
+.cell.x {
+  color: #42a5f5;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 #42a5f5;
+}
+
+.cell.o {
+  color: #ff7043;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 #ff7043;
+}
+
+#resetbox {
+  position: absolute;
+  left: 50%;
+  top: 105%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#resetbox {
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#resetbox button {
+  background: linear-gradient(90deg, #42a5f5, #ff7043);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.1s;
+}
+
+#resetbox button:hover {
+  background: linear-gradient(90deg, #ff7043, #42a5f5);
+  transform: scale(1.05);
+}
