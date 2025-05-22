@@ -1,36 +1,40 @@
 const ROWS = 6;
 const COLS = 7;
-const board = [];
+const board = []; // Skapar en tom spelbräda som en 2D-array
 let currentPlayer = "red";
 let gameOver = false;
 
 for (let r = 0; r < ROWS; r++) {
+  //Initialiserar spelbrädan med null-värden
   board[r] = Array(COLS).fill(null);
 }
 
-const boardDiv = document.getElementById("board");
-const messageDiv = document.getElementById("message") || (() => {
-  const div = document.createElement("div");
-  div.id = "message";
-  boardDiv.parentNode.insertBefore(div, boardDiv.nextSibling);
-  return div;
-})();
+const boardDiv = document.getElementById("board"); // Hämta referens till spelbrädan i HTML
+const messageDiv =
+  document.getElementById("message") ||
+  (() => {
+    const div = document.createElement("div");
+    div.id = "message";
+    boardDiv.parentNode.insertBefore(div, boardDiv.nextSibling);
+    return div;
+  })();
 
 function renderBoard() {
-  boardDiv.innerHTML = "";
+  boardDiv.innerHTML = ""; //Rensa spelbrädan
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
       const cell = document.createElement("div");
-      cell.className = "cell" + (board[r][c] ? " " + board[r][c] : "");
-      cell.dataset.row = r;
-      cell.dataset.col = c;
-      cell.addEventListener("click", () => handleMove(c));
-      boardDiv.appendChild(cell);
+      cell.className = "cell" + (board[r][c] ? " " + board[r][c] : ""); //Lägg till klassnamn för cellen
+      cell.dataset.row = r; //Spara rad och kolumn i datattribut
+      cell.dataset.col = c; //Spara rad och kolumn i datattribut
+      cell.addEventListener("click", () => handleMove(c)); //Lägg till klick-händelse
+      boardDiv.appendChild(cell); //Lägg till cellen i spelbrädan
     }
   }
 }
 
 function handleMove(col) {
+  // Hantera spelrörelse
   if (gameOver) return;
   for (let r = ROWS - 1; r >= 0; r--) {
     if (!board[r][col]) {
@@ -46,34 +50,36 @@ function handleMove(col) {
       return;
     }
   }
-  // Optional: show message if column is full
-  messageDiv.textContent = "Column is full!";
-  setTimeout(() => { messageDiv.textContent = ""; }, 1000);
+  messageDiv.textContent = "Column is full!"; // Meddelande om att kolumnen är full
+  setTimeout(() => {
+    messageDiv.textContent = "";
+  }, 1000); // Ta bort meddelandet efter 1 sekund
 }
 
 function checkWin(row, col, player) {
+  // Kontrollera om spelaren vinner
   function count(dx, dy) {
-    let r = row + dx, c = col + dy, count = 0;
-    while (
-      r >= 0 && r < ROWS &&
-      c >= 0 && c < COLS &&
-      board[r][c] === player
-    ) {
+    // Räknar antalet i rad
+    let r = row + dx,
+      c = col + dy,
+      count = 0;
+    while (r >= 0 && r < ROWS && c >= 0 && c < COLS && board[r][c] === player) {
       count++;
       r += dx;
       c += dy;
     }
     return count;
   }
-  // Check all directions
+
   return (
+    // Kontrollera om spelaren vinner
     count(-1, 0) + count(1, 0) >= 3 || // vertical
     count(0, -1) + count(0, 1) >= 3 || // horizontal
     count(-1, -1) + count(1, 1) >= 3 || // diagonal /
-    count(-1, 1) + count(1, -1) >= 3    // diagonal \
+    count(-1, 1) + count(1, -1) >= 3 // diagonal \
   );
 }
-const resetBtn = document.createElement("button");
+const resetBtn = document.createElement("button"); // Skapa en knapp för att återställa spelet
 resetBtn.textContent = "Reset Game";
 resetBtn.id = "resetBtn";
 resetBtn.addEventListener("click", () => {
@@ -86,4 +92,5 @@ resetBtn.addEventListener("click", () => {
   renderBoard();
 });
 boardDiv.parentNode.insertBefore(resetBtn, boardDiv);
-renderBoard();
+
+renderBoard(); // Rendera spelbrädan

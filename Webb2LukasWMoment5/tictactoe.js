@@ -5,7 +5,7 @@ let gameActive = true;
 let statusDisplay = document.getElementById("status");
 
 
-function checkWinner() {
+function checkWinner() { // Kontrollera om det finns en vinnare
   const winPatterns = [
     [0, 1, 2],
     [3, 4, 5],
@@ -16,7 +16,7 @@ function checkWinner() {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let pattern of winPatterns) {
+  for (let pattern of winPatterns) { // Loopar igenom alla vinstmönster
     const [a, b, c] = pattern;
     if (
       cellArray[a].textContent &&
@@ -28,28 +28,28 @@ function checkWinner() {
       return true;
     }
   }
-  if (cellArray.every((cell) => cell.textContent)) {
+  if (cellArray.every((cell) => cell.textContent)) { // Kontrollera om alla celler är fyllda
     gameActive = false;
     return true;
   }
   return false;
 }
 
-function handleCellClick(e) {
-  const cell = e.target;
-  if (!gameActive || cell.textContent) return;
+function handleCellClick(e) { // Hantera cellklick
+  const cell = e.target; // Hämta cellen som klickades
+  if (!gameActive || cell.textContent) return; // Om spelet är över eller cellen redan är fylld
   cell.textContent = currentPlayer;
-  if (!checkWinner()) {
+  if (!checkWinner()) { // Kontrollera om det finns en vinnare
     currentPlayer = currentPlayer === "X" ? "O" : "X";
   }
 }
 
-cellArray.forEach((cell) => {
-  cell.addEventListener("click", handleCellClick);
+cellArray.forEach((cell) => { // Loopar igenom alla celler
+  cell.addEventListener("click", handleCellClick); // Lägg till klick-händelse
 });
 
-let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", function () {
+let resetButton = document.getElementById("reset"); // Hämta referens till reset-knappen
+resetButton.addEventListener("click", function () { // Hantera reset-knappen
   cellArray.forEach((cell) => {
     cell.textContent = "";
     cell.style.backgroundColor = "";

@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll('.buttons button[data-value]');
 const equalBtn = document.getElementById('equal');
 const clearBtn = document.getElementById('clear');
 
-buttons.forEach(btn => {
+buttons.forEach(btn => { 
     btn.addEventListener('click', () => {
         appendValue(btn.getAttribute('data-value'));
     });
